@@ -26,7 +26,6 @@ int main() {
     return 0;
 }*/
 
-
 #include <stdio.h>
 #include <locale.h>
 #include <string.h>
@@ -42,14 +41,19 @@ int main(int argc, char **argv)
 {
     setlocale(LC_ALL, "Portuguese");
 
-    char palavra[size];
-    int i;
-    while (1)
+    char str[size], keep;
+    int i, j, palindro = 1;
+
+    while (0)
     {
-        printf("Escreva um nome qualquer: ");
+        printf("Digite uma palavra: ");
         fgets(str, size, stdin);
-        printf(str); i = sizeof(str); printf(i);
+        printf(str);
+        i = sizeof(str);
+        printf(i);
         printf("\n");
+
+        fflush(stdin);
     }
     return 0;
 }
