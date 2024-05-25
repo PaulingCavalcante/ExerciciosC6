@@ -1,18 +1,30 @@
-/*#include <stdio.h>
+#include <stdio.h>
+#include <locale.h>
 #include <string.h>
 
-int main() {
-    char palavra[100];
+#define size 47
+
+/*1 - Faça um programa que receba uma palavra e diga se ela é ou não um
+palíndromo. Palíndromos são palavras que possuem a mesma leitura se lidas
+tanto da direita para esquerda quanto da esquerda para direita. Exemplos:
+reter, arara, ovo, osso, radar, etc?*/
+
+int main(){
+    setlocale(LC_ALL, "Portuguese");
+
+    char str[size];
     int i, j;
-    int palindromo = 1; // Assume que é um palíndromo
 
-    printf("Digite uma palavra: ");
-    scanf("%s", palavra);
-
-    // Verifica se a palavra é um palíndromo
-    for (i = 0, j = strlen(palavra) - 1; i < j; i++, j--) {
-        if (palavra[i] != palavra[j]) {
-            palindromo = 0; // Não é um palíndromo
+    while (1)
+    {
+    	char keep;
+    	int palindromo = 1;
+        printf("Digite uma palavra: ");
+        scanf("%s", str);
+   
+    for (i = 0, j = strlen(str) - 1; i < j; i++, j--) {
+        if (str[i] != str[j]) {
+            palindromo = 0; 
             break;
         }
     }
@@ -22,38 +34,7 @@ int main() {
     } else {
         printf("A palavra não é um palíndromo.\n");
     }
-
-    return 0;
-}*/
-
-#include <stdio.h>
-#include <locale.h>
-#include <string.h>
-
-#define size 100
-
-/*1 - Faça um programa que receba uma palavra e diga se ela é ou não um
-palíndromo. Palíndromos são palavras que possuem a mesma leitura se lidas
-tanto da direita para esquerda quanto da esquerda para direita. Exemplos:
-reter, arara, ovo, osso, radar, etc?*/
-
-int main(int argc, char **argv)
-{
-    setlocale(LC_ALL, "Portuguese");
-
-    char str[size], keep;
-    int i, j, palindro = 1;
-
-    while (0)
-    {
-        printf("Digite uma palavra: ");
-        fgets(str, size, stdin);
-        printf(str);
-        i = sizeof(str);
-        printf(i);
-        printf("\n");
-
-        fflush(stdin);
+		printf("\n");				
     }
     return 0;
 }
