@@ -5,32 +5,38 @@
 
 #define size 47
 
+void ex1();
+void ex2();
+void ex3();
+void ex4();
+void ex5();
+
 int main()
 {
 	setlocale(LC_ALL, "Portuguese");
 	int escolha;
 
-	printf("\nEscolha o exercÃ­cio (1 a 5) ou 0 para sair: ");
+	printf("\nEscolha o exercício (1 a 5) ou 0 para sair: ");
 	scanf("%i", &escolha);
 
 	switch (escolha)
 	{
 	case 0:
-		printf("\nAtÃ© mais!\n");
+		printf("\nAté mais!\n");
 		return 0;
 		break;
 	case 1:
-		printf("\nPalÃ­ndromo\n");
+		printf("\nPalíndromo\n");
 		ex1();
 		main();
 		break;
 	case 2:
-		printf("\nCaracter existente\n");
+		printf("\nCaractere existente\n");
 		ex2();
 		main();
 		break;
 	case 3:
-		printf("\nTrocar 8 posiÃ§Ãµes\n");
+		printf("\nTrocar 8 posições\n");
 		ex3();
 		main();
 		break;
@@ -45,7 +51,7 @@ int main()
 		main();
 		break;
 	default:
-		printf("\nExercÃ­cio nÃ£o encontrado\n");
+		printf("\nExercício não encontrado\n");
 		main();
 	}
 
@@ -71,41 +77,37 @@ void ex1()
 	}
 
 	if (resposta)
-		printf("A palavra Ã© um palÃ­ndromo.\n");
+		printf("A palavra é um palíndromo.\n");
 	else
-		printf("A palavra nÃ£o Ã© um palÃ­ndromo.\n");
+		printf("A palavra não é um palíndromo.\n");
 
 	printf("\n");
 }
 
 void ex2()
 {
-	char palavra[47], letra;
-	int j, resultado = 0;
+	char palavra[size], letra;
+	int i, resultado = 0;
 
 	printf("Digite uma palavra: ");
 	scanf("%s", palavra);
 	printf("Digite uma letra: ");
 	scanf(" %c", &letra);
 
-	for (j = 0; j < strlen(palavra); j++)
+	for (i = 0; i < strlen(palavra); i++)
 	{
-		if (palavra[j] == letra)
+		if (palavra[i] == letra)
 		{
-			resultado = j + 1;
+			resultado = 1;
 			break;
 		}
 	}
 
 	system("cls");
 	if (resultado == 0)
-	{
-		printf("Letra nÃ£o encontrada na palavra");
-	}
+		printf("Letra não encontrada na palavra");
 	else
-	{
-		printf("Letra encontrada na %iÂª posiÃ§Ã£o.", resultado);
-	}
+		printf("Letra encontrada na %iª posição.", resultado);
 	printf("\n");
 }
 
@@ -116,14 +118,17 @@ void ex3()
 void ex4()
 {
 	char palavra[11];
-	int j, resultado = 0;
+	int i, j, resultado = 0;
 
-	printf("Digite dez caracteres: ");
+	printf("Digite até dez caracteres: ");
 	scanf("%s", palavra);
+	fflush(stdin);
 
-	for (j = 0; j < 10; j++)
+	j = strlen(palavra) > 10 ? 10 : strlen(palavra); // só serão considerados os 10 primeiros caracteres
+
+	for (i = 0; i < j; i++)
 	{
-		if (palavra[j] != 'a' && palavra[j] != 'e' && palavra[j] != 'i' && palavra[j] != 'o' && palavra[j] != 'u')
+		if (palavra[i] != 'a' && palavra[i] != 'e' && palavra[i] != 'i' && palavra[i] != 'o' && palavra[i] != 'u')
 		{
 			resultado++;
 		}
