@@ -4,6 +4,7 @@
 #include <string.h>
 
 #define size 47
+#define number 16
 
 void ex1();
 void ex2();
@@ -16,8 +17,18 @@ int main()
 	setlocale(LC_ALL, "Portuguese");
 	int escolha;
 
-	printf("\nEscolha o exercício (1 a 5) ou 0 para sair: ");
+	printf("Escolha o exercício (1 a 5) ou 0 para sair\n\n");
+
+	printf("1- Verificação de Palíndromo;\n");
+	printf("2- Busca de Caractere em String;\n");
+	printf("3- Troca de Valores em Vetor de Floats;\n");
+	printf("4- Contagem de Consoantes em Vetor de Caracteres;\n");
+	printf("5- Matriz com Borda Preenchida.\n");
+
+	printf("Escolha: ");
 	scanf("%i", &escolha);
+
+	printf("\n");
 
 	switch (escolha)
 	{
@@ -26,27 +37,27 @@ int main()
 		return 0;
 		break;
 	case 1:
-		printf("\nPalíndromo\n");
+		printf("1- Verificação de Palíndromo\n");
 		ex1();
 		main();
 		break;
 	case 2:
-		printf("\nCaractere existente\n");
+		printf("2- Busca de Caractere em String;\n");
 		ex2();
 		main();
 		break;
 	case 3:
-		printf("\nTrocar 8 posições\n");
+		printf("3- Troca de Valores em Vetor de Floats;\n");
 		ex3();
 		main();
 		break;
 	case 4:
-		printf("\nConsoante\n");
+		printf("4- Contagem de Consoantes em Vetor de Caracteres;\n");
 		ex4();
 		main();
 		break;
 	case 5:
-		printf("\nMatriz\n");
+		printf("5- Matriz com Borda Preenchida.\n");
 		ex5();
 		main();
 		break;
@@ -76,12 +87,14 @@ void ex1()
 		}
 	}
 
+	system("cls");
+
 	if (resposta)
 		printf("A palavra é um palíndromo.\n");
 	else
 		printf("A palavra não é um palíndromo.\n");
 
-	printf("\n");
+	printf("\n\n");
 }
 
 void ex2()
@@ -104,15 +117,49 @@ void ex2()
 	}
 
 	system("cls");
+
 	if (resultado == 0)
 		printf("Letra não encontrada na palavra");
 	else
 		printf("Letra encontrada na %iª posição.", resultado);
-	printf("\n");
+	printf("\n\n");
 }
 
 void ex3()
 {
+	float numbers[number], aux;
+	int i, j;
+
+	for (i = 0; i < number; i++)
+	{
+		printf("Digite o %iº número: ", i + 1);
+		scanf("%f", &numbers[i]);
+	}
+
+	system("cls");
+
+	printf("Números inicialmente:");
+
+	for (i = 0; i < number; i++)
+	{
+		printf("%.2f ", numbers[i]);
+	}
+
+	for (i = 0, j = number / 2; i < number / 2; i++, j++)
+	{
+		aux = numbers[i];
+		numbers[i] = numbers[j];
+		numbers[j] = aux;
+	}
+
+	printf("\nNúmeros reordenados:");
+
+	for (i = 0; i < number; i++)
+	{
+		printf("%.2f ", numbers[i]);
+	}
+
+	printf("\n\n");
 }
 
 void ex4()
@@ -136,7 +183,7 @@ void ex4()
 
 	system("cls");
 	printf("Foram encontradas %i consoantes", resultado);
-	printf("\n");
+	printf("\n\n");
 }
 
 void ex5()
