@@ -5,6 +5,10 @@
 
 #define size 47
 #define number 16
+// #define TAM 10
+#define TAM 20
+// #define TAM 25
+// #define TAM 30
 
 void ex1();
 void ex2();
@@ -33,7 +37,7 @@ int main()
 	switch (escolha)
 	{
 	case 0:
-		printf("\nAté mais!\n");
+		printf("Até mais!");
 		return 0;
 		break;
 	case 1:
@@ -192,5 +196,48 @@ zeros e em seguida preencha somente as linhas e colunas que estiverem na
 uma constante e teste o programa com TAM = 10, 20, 25 e 30*/
 void ex5()
 {
-	
+	int i, j, matriz[TAM][TAM];
+
+	// Preencher a matriz com zeros
+	for (i = 0; i < TAM; i++)
+	{
+		for (j = 0; j < TAM; j++)
+		{
+			matriz[i][j] = 0;
+		}
+	}
+
+	system("cls");
+
+	printf("Matriz inicialmente:\n");
+
+	for (i = 0; i < TAM; i++)
+	{
+		for (j = 0; j < TAM; j++)
+		{
+			printf("%d ", matriz[i][j]);
+		}
+		printf("\n");
+	}
+
+	for (i = 0; i < TAM; i++)
+	{
+		for (j = 0; j < TAM; j++)
+		{
+			if (i == 0 || i == TAM - 1 || j == 0 || j == TAM - 1)
+				matriz[i][j] = 1;
+		}
+	}
+
+	printf("\nMatriz posteriormente:\n");
+
+	for (i = 0; i < TAM; i++)
+	{
+		for (j = 0; j < TAM; j++)
+		{
+			printf("%d ", matriz[i][j]);
+		}
+		printf("\n");
+	}
+	printf("\n\n");
 }
