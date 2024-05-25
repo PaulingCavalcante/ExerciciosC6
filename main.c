@@ -98,7 +98,7 @@ void ex2()
 	{
 		if (palavra[i] == letra)
 		{
-			resultado = 1;
+			resultado = i + 1;
 			break;
 		}
 	}
