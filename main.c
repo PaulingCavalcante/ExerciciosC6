@@ -73,6 +73,9 @@ int main()
 	return 0;
 }
 
+/*1 - Faça um programa que receba uma palavra e diga se ela é ou não um
+palíndromo. Palíndromos são palavras que possuem a mesma leitura se lidas
+tanto da direita para esquerda quanto da esquerda para direita.*/
 void ex1()
 {
 	char str[size];
@@ -101,6 +104,10 @@ void ex1()
 	printf("\n\n");
 }
 
+/*2 - Escreva um programa que receba uma string e um caracter e retorne a
+primeira posição que esse caracter se encontra na string ou um aviso caso o
+caracter não existe na string.
+*/
 void ex2()
 {
 	char palavra[size], letra;
@@ -129,6 +136,9 @@ void ex2()
 	printf("\n\n");
 }
 
+/*3 - Faça um programa que receba e armazene em um vetor dezesseis valores
+do tipo float. Depois, o programa deve trocar os oito primeiros valores pelos
+oito últimos e vice-e-versa. Escreva ao final o vetor resultante.*/
 void ex3()
 {
 	float numbers[number], aux;
@@ -166,6 +176,8 @@ void ex3()
 	printf("\n\n");
 }
 
+/*4 - Faça um programa que leia um vetor de 10 caracteres, e diga quantas
+consoantes foram lidas. Imprima as consoantes.*/
 void ex4()
 {
 	char palavra[11];
@@ -190,7 +202,7 @@ void ex4()
 	printf("\n\n");
 }
 
-/* - Faça um programa que utilize uma matriz TAM x TAM e preencha-a com
+/*5 - Faça um programa que utilize uma matriz TAM x TAM e preencha-a com
 zeros e em seguida preencha somente as linhas e colunas que estiverem na
 ?borda? com o valor 1. Após isso, imprima a matriz resultante. Utilize TAM como
 uma constante e teste o programa com TAM = 10, 20, 25 e 30*/
