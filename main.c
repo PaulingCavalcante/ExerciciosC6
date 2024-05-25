@@ -138,7 +138,7 @@ void ex3()
 
 	system("cls");
 
-	printf("Números inicialmente:");
+	printf("Números iniciais:\n");
 
 	for (i = 0; i < number; i++)
 	{
@@ -152,7 +152,7 @@ void ex3()
 		numbers[j] = aux;
 	}
 
-	printf("\nNúmeros reordenados:");
+	printf("\n\nNúmeros reordenados:\n");
 
 	for (i = 0; i < number; i++)
 	{
@@ -186,6 +186,11 @@ void ex4()
 	printf("\n\n");
 }
 
+/* - Faça um programa que utilize uma matriz TAM x TAM e preencha-a com
+zeros e em seguida preencha somente as linhas e colunas que estiverem na
+?borda? com o valor 1. Após isso, imprima a matriz resultante. Utilize TAM como
+uma constante e teste o programa com TAM = 10, 20, 25 e 30*/
 void ex5()
 {
+	
 }
